@@ -25,22 +25,22 @@
    - Overview of the site, featured jobs, and navigation links.
 
 2. **Job Listings**  
-   - Browse all odd jobs. Includes filters by category or salary range.
+   - Browse all odd jobs. 
 
 3. **Job Details Page**  
-   - Full details for each job, including description, salary, skills, and category.
+   - Full details for each job.
 
 4. **Add a Job**  
-   - Form to submit a new odd job. Includes title, description, salary, skills, and category.
+   - Form to submit a new odd job.
 
 5. **Edit/Delete Job**  
    - Edit or remove existing jobs.
 
 6. **Job Postings**  
-   - Users can post their own job listings based on available job types and add location info.
+   - Users can post their own job listings.
 
 7. **Salary Comparison Tool**  
-   - Compare average salaries for odd jobs by region using an interactive chart or calculator.
+   - Compare average salaries for odd jobs.
 
 8. **PDF Generator**  
    - Export a printable PDF with selected job details, salary info, and skills.
@@ -53,7 +53,7 @@
 | ---------- | ------------- | ------------------- | --------------------------------------------------- |
 | Primary    | #4F46E5       | Indigo color        | Gives a subtle pop while still feeling professional |
 | Accent     | #A5B4FC       | Lavender blue color | Light highlights or hover states                    |
-| Background | #FFFFFF       | Solid white         | For a clean and crisp background                    |
+| Background | #FFFFFF       | Solid white         | For a clean  background                             |
 | Text       | #111827       | Dark Grey           | Dark text for eligibility and contrast              |
 
 ### Database Tables
@@ -66,14 +66,14 @@
 | description  | Full job description                 |
 | salary       | Average salary                       |
 | skills       | List of required skills              |
-| category     | Job category (e.g., Outdoor, Animal) |
+| category     | Job category                         |
 
 #### `job_postings`
 | Field        | Description                          |
 |--------------|--------------------------------------|
 | id           | Unique posting ID                    |
 | job_id       | Links to job                         |
-| location     | Location of job (real or fictional)  |
+| location     | Location of job                      |
 | description  | Custom posting content               |
 | date_posted  | When it was posted                   |
 
