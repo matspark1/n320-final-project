@@ -1,25 +1,108 @@
-## Final Project
+## Final Project: The Odd Job Board
 
 ### Project Summary
 
-Brief description of your what your project is about and why you chose that topic.
+**The Odd Job Board** is a fun web application that explores the world’s most unusual jobs — from iceberg movers to pet food tasters. Users can browse job profiles, compare salaries, post their own odd jobs, and generate printable job profile PDFs.
 
 ### Live Link
 
-[Not Working Yet](https://url.com)  
+[Coming Soon](https://url.com)
 
-### Key Takeaways
+---
 
-Understanding of why we are doing this project
+### Key Goals
 
-### Core Webpages
+- Build a full-stack web application.
+- Learn to manage data with databases and APIs.
+- Practice working as a team using GitHub and version control.
+- Design an intuitive and user-friendly interface.
 
-List core webpages and briefly describe the page of them
+---
 
-### Design Choices 
+### Core Pages
 
-List color palette used and rationale for top level layout decisions. Outline Database table design choice with rationale.
+1. **Home Page**  
+   - Overview of the site, featured jobs, and navigation links.
 
-### Members & Responsibilities
+2. **Job Listings**  
+   - Browse all odd jobs. Includes filters by category or salary range.
 
-List all members and their roles
+3. **Job Details Page**  
+   - Full details for each job, including description, salary, skills, and category.
+
+4. **Add a Job**  
+   - Form to submit a new odd job. Includes title, description, salary, skills, and category.
+
+5. **Edit/Delete Job**  
+   - Edit or remove existing jobs.
+
+6. **Job Postings**  
+   - Users can post their own job listings based on available job types and add location info.
+
+7. **Salary Comparison Tool**  
+   - Compare average salaries for odd jobs by region using an interactive chart or calculator.
+
+8. **PDF Generator**  
+   - Export a printable PDF with selected job details, salary info, and skills.
+
+---
+
+### Design Choices
+
+| Variant    | Element/Block | Description         | Why                                                 |
+| ---------- | ------------- | ------------------- | --------------------------------------------------- |
+| Primary    | #4F46E5       | Indigo color        | Gives a subtle pop while still feeling professional |
+| Accent     | #A5B4FC       | Lavender blue color | Light highlights or hover states                    |
+| Background | #FFFFFF       | Solid white         | For a clean and crisp background                    |
+| Text       | #111827       | Dark Grey           | Dark text for eligibility and contrast              |
+
+### Database Tables
+
+#### `jobs`
+| Field        | Description                          |
+|--------------|--------------------------------------|
+| id           | Unique job ID                        |
+| title        | Name of the job                      |
+| description  | Full job description                 |
+| salary       | Average salary                       |
+| skills       | List of required skills              |
+| category     | Job category (e.g., Outdoor, Animal) |
+
+#### `job_postings`
+| Field        | Description                          |
+|--------------|--------------------------------------|
+| id           | Unique posting ID                    |
+| job_id       | Links to job                         |
+| location     | Location of job (real or fictional)  |
+| description  | Custom posting content               |
+| date_posted  | When it was posted                   |
+
+#### `salary_data`
+| Field        | Description                          |
+|--------------|--------------------------------------|
+| id           | Unique entry                         |
+| job_id       | Links to job in `jobs` table         |
+| region       | Geographic region                    |
+| salary       | Average salary in that region        |
+
+---
+
+### Team Members & Responsibilities
+
+
+**Matt – President**
+- Create and manage GitHub repository  
+- Delegate roles  
+- Submit assignments  
+- Create and maintain live link  
+
+**Ari – Scrum Master**
+- Write "Members & Responsibilities" section  
+- Track and record team roles and completed tasks  
+
+**Jonathan – Designer**
+- Select and apply color palette  
+
+**Megan – Analyst**
+- Write "Key Takeaways" section  
+- Design project logo 
