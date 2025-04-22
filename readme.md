@@ -77,14 +77,6 @@
 | description  | Custom posting content               |
 | date_posted  | When it was posted                   |
 
-#### `salary_data`
-| Field        | Description                          |
-|--------------|--------------------------------------|
-| id           | Unique entry                         |
-| job_id       | Links to job in `jobs` table         |
-| region       | Geographic region                    |
-| salary       | Average salary in that region        |
-
 ---
 
 ### Team Members & Responsibilities
