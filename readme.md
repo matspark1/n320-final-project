@@ -77,24 +77,28 @@
 | description  | Custom posting content               |
 | date_posted  | When it was posted                   |
 
+
 ---
 
 ### Team Members & Responsibilities
-
 
 **Matt – President**
 - Create and manage GitHub repository  
 - Delegate roles  
 - Submit assignments  
 - Create and maintain live link  
+- **Pages:** Job Listing, Job Details Page  
 
 **Ari – Scrum Master**
 - Write "Members & Responsibilities" section  
 - Track and record team roles and completed tasks  
+- **Pages:** Add a Job Page, Edit/Delete Job Page  
 
 **Jonathan – Designer**
 - Select and apply color palette  
+- **Pages:** Job Postings, Salary Comparison Tool  
 
 **Megan – Analyst**
 - Write "Key Takeaways" section  
-- Design project logo 
+- Design project logo  
+- **Pages:** PDF Generator Page, Home Page  
