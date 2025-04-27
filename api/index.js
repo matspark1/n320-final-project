@@ -1,6 +1,7 @@
 const router = require("express").Router();
 
 const db = require("../database");
+router.use("/suggestions", require("./suggestions"))
 
 db.run(
   `create table if not exists cats (

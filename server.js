@@ -24,6 +24,18 @@ app.get(
     res.send("<p>Limit</p>");
   }
 );
+app.delete('/api/suggestions/remove/:id', (req, res) => {
+  const suggestionId = req.params.id;
+
+  // Find and remove the suggestion with the given ID
+  const index = suggestions.findIndex(suggestion => suggestion.id === suggestionId);
+  if (index !== -1) {
+    suggestions.splice(index, 1);
+    res.status(200).send({ message: 'Suggestion deleted successfully.' });
+  } else {
+    res.status(404).send({ message: 'Suggestion not found.' });
+  }
+});
 
 app.get("/*page.html", function (req, res) {
   res.redirect("/404.html");
