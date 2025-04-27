@@ -1,3 +1,4 @@
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,22 +10,31 @@ body {
   height: 100%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+h1, h2, h3, h4, h5, h6, p {
   margin-bottom: 16px;
-  font-family: monospace;
+  font-family: 'popM', sans-serif;
+}
+
+@font-face {
+  font-family: 'popM';
+  src: url(../fonts/Poppins-Medium.ttf);
+}
+@font-face {
+  font-family: 'popB';
+  src: url(../fonts/Poppins-Bold.ttf);
 }
 
 nav {
-  background-color: #ffebcd;
-  font-family: monospace;
+  background-color: #A5B4FC;
   font-size: 24px;
+  font-family: popM;
   padding-left: 3rem;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 20px;
+  position: relative;
+  top: 50px;
+  z-index: 1;
 }
 
 nav ul {
@@ -40,9 +50,250 @@ nav ul li {
 
 nav a {
   text-decoration: none;
-  color: black;
+  color: white;
+}
+
+nav a:hover {
+  color: #A5B4FC;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+.logo{
+  background-image: url(../images/oddJob_Logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80px;
+  width: 80px;
+
+}
+
+.hero {
+  background-image: url(../images/hero.gif);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 700px;
+  position: relative;
+  margin: 0 auto;
+  right: 300px;
+}
+
+.title {
+  position: absolute;
+  top: 40%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: rgb(0, 0, 0);
+  font-family: popB;
+}
+
+.tag {
+  position: absolute;
+  top: 52%;
+  left: 64%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  font-family: popM;
+}
+
+button {
+  position: absolute;
+  top: 60%;
+  left: 59%;
+  transform: translate(-50%, -50%);
+  background-color: #A5B4FC;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button a {
+  text-decoration: none;
+  color: white;
+}
+
+button:hover {
+  color: #A5B4FC;
+  background-color: #4f46e5;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
 }
 
 main {
-  padding: 40px;
+  margin: 100px;
+  background: linear-gradient(300deg, #4f46e5, #a5b4fc, #ffffff);
+  background-size: 240% 240%;
+  animation: gradient-animation 24s ease infinite;
+  position: relative;
+  height: auto;
+  padding: 50px;
+  border-radius: 30px;
+}
+.How h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.steps h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+
+.bubbles-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; 
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-bottom: 100px;
+}
+
+.bubble1, .bubble2, .bubble3 {
+  background: #f0f8ff;
+  border: 2px solid #4f46e5;
+  border-radius: 30px;
+  padding: 2rem;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.bubble1:hover, .bubble2:hover, .bubble3:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.bubble1 h2, .bubble2 h2, .bubble3 h2 {
+  font-size: 2rem;
+  color: #4f46e5;
+  margin-bottom: 0.5rem;
+}
+
+.bubble1 p, .bubble2 p, .bubble3 p {
+  font-size: 1.2rem;
+  color: #555;
+}
+.suggestion-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+
+.suggestion-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 300px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.actions-container {
+  display: none;
+  position: relative;
+  left: 15px;
+  
+}
+
+.suggestion-card:hover .actions-container {
+  display: flex;
+}
+
+.edit-btn {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  margin-left: 30px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.edit-btn:hover {
+  background-color: #e67e22;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  left: 100px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.suggest-job h2{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #333;
+  justify-content: center;
+}
+.suggest-job form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+  border: #3e38b5;
+  border-radius: 20px;
+}
+
+.suggest-job input, .suggest-job textarea {
+  padding: 10px;
+  margin: 5px 0;
+  border: #3e38b5;
+  border-radius: 20px;
+  font-family: popM;
+}
+
+.suggest-job button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  top: 50px;
+  width: 70%;
+  left: 35%;
+  margin: 0 auto;
+}
+
+.suggest-job button:hover {
+  background-color: #3e38b5;
+}
+
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

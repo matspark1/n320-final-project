@@ -10,16 +10,60 @@
     <nav>
       <ul>
         <li>
-          <a href="./">Home</a>
+          <a href="./"><div class="logo"></div></a>
         </li>
-        <li>
-          <a href="./about/">About</a>
-        </li>
+        <li><a style="color: #4f46e5" href="./">Home</a></li>
+        <li><a href="./about/">Browse Jobs</a></li>
+        <li><a href="./about/">Add a Job</a></li>
       </ul>
     </nav>
 
+    <div class="hero"></div>
+    <div class="title">Discover the World's Strangest Careers</div>
+    <div class="tag">Think Outside the normal 9-to-5</div>
+    <button><a href="#">Browse Jobs</a></button>
+
     <main>
-      <h1>Home</h1>
+      <div class="How"><h1>How it Works</h1></div>
+      <div class="steps"><h3>3 steps to find your dream job:</h3></div>
+
+      <div class="bubbles-container">
+        <div class="bubble1">
+          <div class="step1">
+            <h2>Step 1</h2>
+            <p>Browse through our curated list of unique jobs.</p>
+          </div>
+        </div>
+
+        <div class="bubble2">
+          <div class="step2">
+            <h2>Step 2</h2>
+            <p>Apply for the jobs that interest you.</p>
+          </div>
+        </div>
+
+        <div class="bubble3">
+          <div class="step3">
+            <h2>Step 3</h2>
+            <p>Get hired and start your new adventure!</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="suggest-job">
+        <h2>Suggest a Weird Job!</h2>
+        <form id="newSuggestion">
+          <input name="title" type="text" placeholder="Job Title" required />
+          <textarea
+            name="description"
+            placeholder="Job Description"
+            required
+          ></textarea>
+          <button type="submit">Add Suggestion</button>
+        </form>
+      </section>
+
+      <div id="suggestionList"></div>
     </main>
 
     <script src="./js/home.js"></script>
