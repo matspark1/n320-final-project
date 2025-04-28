@@ -13,6 +13,9 @@
   "description": "",
   "dependencies": {
     "express": "^5.1.0",
+    "jspdf": "^3.0.1",
+    "mime-types": "^3.0.1",
+    "pdf-lib": "^1.17.1",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {

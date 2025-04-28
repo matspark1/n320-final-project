@@ -27,7 +27,6 @@ app.get(
 app.delete('/api/suggestions/remove/:id', (req, res) => {
   const suggestionId = req.params.id;
 
-  // Find and remove the suggestion with the given ID
   const index = suggestions.findIndex(suggestion => suggestion.id === suggestionId);
   if (index !== -1) {
     suggestions.splice(index, 1);
