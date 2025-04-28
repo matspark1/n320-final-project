@@ -19,7 +19,7 @@ document.getElementById("submitJob").addEventListener("submit", async (event) =>
 
   try {
  
-    const resp = await fetch(`${baseUrl}/jobs/new`, {
+    const resp = await fetch(`${baseUrl}/api/new`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -11,7 +11,7 @@ async function getJobs() {
    <h4><a href="../job-details/${job.id}">${job.title}</a></h4>
     <p>${job.category}</p>
     <div class="job-btns">
-      <button class="add-job-btn" title="Edit Job" onclick="window.location.href='./update/${job.id}'"><i class="fa-solid fa-pen-to-square"></i></button>
+      <button class="add-job-btn" title="Edit Job" onclick="window.location.href='../api/update/${job.id}'"><i class="fa-solid fa-pen-to-square"></i></button>
       <button class="delete-job-btn" title="Remove Job" onclick="window.location.href='./remove/${job.id}'"><i class="fa-solid fa-trash"></i></button>
     </div>
   </div>
