@@ -1,14 +1,14 @@
-const baseUrl = window.location.origin + "/api";
+const baseUrl = window.location.origin;
 
 const jobId = window.location.pathname.split("/").pop();
 
 async function loadJob(){
     try {
-        const resp = await fetch(`${baseUrl}/jobs/update/${jobId}`);
+        const resp = await fetch(`${baseUrl}/update/${jobId}`);
         const job = await resp.json();
         document.querySelector('input[name="title"]').value = job.title;
         document.querySelector('textarea[name="description"]').value = job.description;
-        document.querySelector('integer[name="salary"]').value = job.salary;
+        document.querySelector('input[name="salary"]').value = job.salary;
         document.querySelector('input[name="skills"]').value = job.skills;
         document.querySelector('input[name="category"]').value = job.category;
         
@@ -28,7 +28,7 @@ document.getElementById("editJobForm").addEventListener("submit", async (e) => {
     
 
     try{
-        const resp = await fetch (`${baseUrl}/jobs/update/${jobId}`, {
+        const resp = await fetch (`${baseUrl}/update/${jobId}`, {
             method: "PUT", //PUT IT DOWN
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({title, description, salary, skills, category}),

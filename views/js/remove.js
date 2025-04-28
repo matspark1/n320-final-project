@@ -4,7 +4,7 @@ const jobId = window.location.pathname.split("/").pop();
 
 document.getElementById("confirmDelete").addEventListener("click", async () => {
   try {
-    const resp = await fetch(`${baseUrl}/jobs/remove/${jobId}`, {
+    const resp = await fetch(`${baseUrl}/remove/${jobId}`, {
       method: "DELETE",
     });
 
