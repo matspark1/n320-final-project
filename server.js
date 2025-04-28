@@ -14,6 +14,10 @@ app.use(
   )
 );
 
+app.get("/job-details/:id", function (req, res) {
+  res.sendFile(path.join(__dirname, "views", "job-details", "index.html"));
+});
+
 app.get(
   "/contact",
   function (req, res, next) {
@@ -24,16 +28,18 @@ app.get(
     res.send("<p>Limit</p>");
   }
 );
-app.delete('/api/suggestions/remove/:id', (req, res) => {
+app.delete("/api/suggestions/remove/:id", (req, res) => {
   const suggestionId = req.params.id;
 
   // Find and remove the suggestion with the given ID
-  const index = suggestions.findIndex(suggestion => suggestion.id === suggestionId);
+  const index = suggestions.findIndex(
+    (suggestion) => suggestion.id === suggestionId
+  );
   if (index !== -1) {
     suggestions.splice(index, 1);
-    res.status(200).send({ message: 'Suggestion deleted successfully.' });
+    res.status(200).send({ message: "Suggestion deleted successfully." });
   } else {
-    res.status(404).send({ message: 'Suggestion not found.' });
+    res.status(404).send({ message: "Suggestion not found." });
   }
 });
 

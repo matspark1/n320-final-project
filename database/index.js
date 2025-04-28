@@ -1,10 +1,10 @@
 const sqlite3 = require("sqlite3").verbose();
 
-const db = new sqlite3.Database("./pets.sqlite", function (err) {
+const db = new sqlite3.Database("./oddjobs.sqlite", function (err) {
   if (err) {
     console.log("Error connecting to database");
   } else {
-    console.log("Database Connected: Pets");
+    console.log("Database Connected: oddJobs");
   }
 });
 
