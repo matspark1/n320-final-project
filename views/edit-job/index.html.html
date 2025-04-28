@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Job</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="./"><div class="logo"></div></a>
+        </li>
+        <li><a style="color: #4f46e5" href="./">Home</a></li>
+        <li><a href="./jobs/">Browse Jobs</a></li>
+        <li><a href="./add-job/">Add a Job</a></li>
+        <li><a href="./">Timesheet Maker</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h1>Edit Job</h1>
+      <form id="editJobForm">
+        <input
+          id="title"
+          name="title"
+          type="text"
+          placeholder="Job Title"
+          required
+        />
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Description"
+          required
+        ></textarea>
+        <input
+          id="salary"
+          name="salary"
+          type="integer"
+          placeholder="Salary"
+          required
+        />
+        <input
+          id="skills"
+          name="skills"
+          type="text"
+          placeholder="Skills"
+          required
+        />
+        <input
+          id="category"
+          name="category"
+          type="text"
+          placeholder="Category"
+          required
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+    <script src="../js/edit-job.js"></script>
+  </body>
+</html>
