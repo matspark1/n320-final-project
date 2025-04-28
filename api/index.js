@@ -36,6 +36,67 @@ db.run(
   }
 );
 
+
+db.run(
+  `
+  create table if not exists suggestions (
+    id integer primary key autoincrement,
+    sug_title text,
+    sug_description text,
+  )
+`,
+  (err) => {
+    if (err) console.log(err);
+  }
+);
+// suggestions table stuff
+function getSugs() {
+  return new Promise((resolve, reject) => {
+    db.all(`select * from suggestions`, [], (err, rows) => {
+      if (err) reject(err);
+      else resolve(rows);
+    });
+  });
+}
+
+function addSugs(sug_title, sug_description) {
+  return new Promise((resolve, reject) => {
+    db.run(
+      `insert into jobs (sug_title, sug_description)
+       values ("${sug_title}", "${sug_description}")`,
+      function (err) {
+        if (err) reject(err);
+        else resolve({ id: this.lastID });
+      }
+    );
+  });
+}
+
+function updateSugs(id, sug_title, sug_description) {
+  return new Promise((resolve, reject) => {
+    db.run(
+      `update jobs
+         set sug_title       = "${sug_title}",
+          sug_description = "${sug_description}"
+       where id = ${id}`,
+      function (err) {
+        if (err) reject(err);
+        else resolve(true);
+      }
+    );
+  });
+}
+
+function deleteSugs(id) {
+  return new Promise((resolve, reject) => {
+    db.run(`delete from suggestions where id = ${id}`, function (err) {
+      if (err) reject(err);
+      else resolve(true);
+    });
+  });
+}
+
+
 // jobs table stuff
 
 function getDbJobs() {
@@ -136,6 +197,56 @@ function deleteDbJobPosting(id) {
     });
   });
 }
+
+// routing for suggestions
+router.get("/suggestions", async (req, res) => {
+  try {
+    const sugs = await getSugs();
+    res.status(200).json(sugs);
+  } catch (e) {
+    res.status(400).json({ error: e });
+  }
+});
+router.post("/suggestions/new", async (req, res) => {
+  try {
+    const { sug_title, sug_description } = req.body;
+    await addSugs(sug_title, sug_description);
+    const jobs = await addSugs();
+    res.status(200).json({ totalJobs: jobs.length });
+  } catch (e) {
+    res.status(400).json({ error: e });
+  }
+});
+
+
+router.put("/suggestions/update/:sugId", async (req, res) => {
+  try {
+    const { sug_title, sug_description } = req.body;
+    await updateSugs(
+      req.params.sugId,
+      sug_title,
+      sug_description
+    );
+    res.status(200).json({ updated: true });
+  } catch (e) {
+    res.status(400).json({ error: e });
+  }
+});
+
+
+router.delete("/suggestions/remove/:sugId", async (req, res) => {
+  try {
+    await deleteSugs(req.params.sugId);
+    const sugs = await getDbSugs();
+    res.status(200).json({ totalSugs: sugs.length });
+  } catch (e) {
+    res.status(400).json({ error: e });
+  }
+});
+
+
+
+
 
 // routing for jobs
 
