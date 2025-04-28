@@ -14,7 +14,7 @@ db.run(
     salary integer,
     skills text,
     category text
-  )
+  );
 `,
   (err) => {
     if (err) console.log(err);
@@ -29,7 +29,7 @@ db.run(
     location text,
     description text,
     date_posted text
-  )
+  );
 `,
   (err) => {
     if (err) console.log(err);
@@ -42,7 +42,7 @@ db.run(
   create table if not exists suggestions (
     id integer primary key autoincrement,
     sug_title text,
-    sug_description text,
+    sug_description text
   )
 `,
   (err) => {
@@ -130,7 +130,7 @@ function updateDbJob(id, title, description, salary, skills, category) {
              salary      = ${salary},
              skills      = "${skills}",
              category    = "${category}"
-       where id = ${id}`,
+       where id = ${id};`,
       function (err) {
         if (err) reject(err);
         else resolve(true);
