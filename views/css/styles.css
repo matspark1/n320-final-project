@@ -1,4 +1,4 @@
-/* General Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -212,39 +212,7 @@ main {
   
 }
 
-.suggestion-card:hover .actions-container {
-  display: flex;
-}
 
-.edit-btn {
-  background-color: #f39c12;
-  color: white;
-  border: none;
-  margin-left: 30px;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-.edit-btn:hover {
-  background-color: #e67e22;
-}
-
-.delete-btn {
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  left: 100px;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-.delete-btn:hover {
-  background-color: #c0392b;
-}
 
 .suggest-job h2{
   font-size: 3rem;
@@ -281,9 +249,7 @@ main {
   margin: 0 auto;
 }
 
-.suggest-job button:hover {
-  background-color: #3e38b5;
-}
+
 
 
 @keyframes gradient-animation {
@@ -297,3 +263,90 @@ main {
     background-position: 0% 50%;
   }
 }
+
+/* sugg added styles */
+
+.suglist {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #4f46e5;
+  position: relative;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  height: 130px !important;
+  margin-top: 100px;
+}
+
+.suglist h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 20px;
+  color: #333;
+}
+
+
+
+
+.suglist p {
+  color: #555;
+  font-size: 16px;
+}
+
+.suglist p:last-of-type {
+  margin-bottom: 16px;
+}
+
+.sug-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  right: -200px;
+}
+
+.sug-btns button {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+
+.delete-sug-btn {
+  background-color: #ef4444;
+  color: #fff;
+  margin-left: 262px;
+}
+
+.delete-sug-btn:hover {
+  background-color: #a92e2e;
+  color: #fff;
+}
+
+.sug-details-wrapper {
+  margin-top: 90px;
+  padding: 0 60px;
+}
+
+.sugdetails {
+  border: 1px solid #4f46e5;
+  border-radius: 8px;
+  padding: 20px 20px 20px 90px;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  h2 {
+    color: #4f46e5;
+  }
+}
+
+
+
