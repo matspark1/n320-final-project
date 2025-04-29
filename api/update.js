@@ -1,39 +1,33 @@
-import { jobs } from "../database";
+const express = require('express');
+const router = express.Router();
+const db = require('../database/index');
 
-export async function GET(req, { params }) {
-  const { id } = params;
-  const job = jobs.find(j => j.id === id);
 
+router.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  
+
+  const stmt = db.prepare('select * from jobs where id = ?');
+const job = stmt.get(id);
   if (job) {
-    return new Response(JSON.stringify(job), { status: 200 });
+    res.json(job);
   } else {
-    return new Response(JSON.stringify({ error: "Job not found" }), { status: 404 });
+    res.status(404).json({ error: "Job not found" });
   }
-}
+});
 
-export async function PUT(req, { params }) {
-  const { id } = params;
-  const body = await req.json();
+router.put("/:id", async (req, res) => {
+  const { id } = req.params;
+  const { title, description, salary, skills, category } = req.body;
 
-  const index = jobs.findIndex(j => j.id === id);
+  const index = db.findIndex((j) => j.id === parseInt(id));
 
   if (index !== -1) {
-    jobs[index] = { ...jobs[index], ...body };
-    return new Response(JSON.stringify({ message: "Job updated" }), { status: 200 });
+    db[index] = { ...db[index], title, description, salary, skills, category };
+    res.json({ message: "Job updated" });
   } else {
-    return new Response(JSON.stringify({ error: "Job not found" }), { status: 404 });
+    res.status(404).json({ error: "Job not found" });
   }
-}
+});
 
-export async function DELETE(req, { params }) {
-  const { id } = params;
-
-  const index = jobs.findIndex(j => j.id === id);
-
-  if (index !== -1) {
-    jobs.splice(index, 1);
-    return new Response(JSON.stringify({ message: "Job deleted" }), { status: 200 });
-  } else {
-    return new Response(JSON.stringify({ error: "Job not found" }), { status: 404 });
-  }
-}
+module.exports = router;

@@ -1,8 +1,8 @@
 const express = require("express");
 const path = require("path");
-
-// Create an express app
 const app = express();
+
+// require('./api/update')(app);
 
 app.use(express.json());
 
@@ -17,6 +17,7 @@ app.use(
 app.get("/job-details/:id", function (req, res) {
   res.sendFile(path.join(__dirname, "views", "job-details", "index.html"));
 });
+
 app.get("/edit-job/:id", function (req,res){
   res.sendFile(path.join(__dirname, "views", "edit-job", "index.html"));
 });
@@ -38,6 +39,8 @@ app.get(
     res.send("<p>Limit</p>");
   }
 );
+
+
 
 
 app.get("/*page.html", function (req, res) {
