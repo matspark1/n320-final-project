@@ -18,6 +18,10 @@ app.get("/job-details/:id", function (req, res) {
   res.sendFile(path.join(__dirname, "views", "job-details", "index.html"));
 });
 
+app.get("/job-pdf-generator", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "jobPDFGenerator.html"));
+});
+
 app.get(
   "/contact",
   function (req, res, next) {
