@@ -17,6 +17,12 @@ app.use(
 app.get("/job-details/:id", function (req, res) {
   res.sendFile(path.join(__dirname, "views", "job-details", "index.html"));
 });
+app.get("/edit-job/:id", function (req,res){
+  res.sendFile(path.join(__dirname, "views", "edit-job", "index.html"));
+});
+app.get("/delete-job/:id", function (req,res){
+  res.sendFile(path.join(__dirname, "views", "delete-job", "index.html"));
+});
 
 app.get(
   "/contact",
