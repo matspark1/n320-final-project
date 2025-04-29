@@ -20,6 +20,7 @@ class GeneratePDF {
     this.pdfDoc.setFontSize(28);
     this.pdfDoc.text(text, 105, this.position.y, { align: "center" });
     this.position.y += 20;
+    this.pdfDoc.setTextColor(107, 130, 201);
   }
 
   addFieldValue(label, value) {
@@ -27,31 +28,61 @@ class GeneratePDF {
     this.pdfDoc.setFont("helvetica", "bold");
     this.pdfDoc.text(`${label}:`, this.margin.x, this.position.y);
     this.pdfDoc.setFont("helvetica", "normal");
+    this.pdfDoc.setTextColor(107, 130, 201); 
     this.pdfDoc.text(String(value), this.margin.x + 40, this.position.y);
     this.position.y += 8;
   }
 
   addDescription(desc) {
-    this.position.y += 5;
+    const cardWidth = 180;
+    const cardPadding = 8;
+    const titleHeight = 12;
+    const descFontSize = 11;
+
+    const startX = this.margin.x;
+    const startY = this.position.y + 5;
+
+  
+    const lines = this.pdfDoc.splitTextToSize(desc, cardWidth - (cardPadding * 2));
+    const textHeight = lines.length * 6;
+    const cardHeight = titleHeight + textHeight + (cardPadding * 2);
+
+    
+    this.pdfDoc.setFillColor(209, 245, 255); 
+    this.roundedRect(startX - 2, startY - 2, cardWidth + 4, cardHeight + 4, 5, 'F');
+
+
+    this.pdfDoc.setFillColor(107, 130, 201);
+    this.pdfDoc.rect(startX, startY, cardWidth, titleHeight, 'F');
+    this.pdfDoc.setFontSize(12);
+    this.pdfDoc.setTextColor(255, 255, 255); 
     this.pdfDoc.setFont("helvetica", "bold");
-    this.pdfDoc.text("Description:", this.margin.x, this.position.y);
-    this.position.y += 8;
+    this.pdfDoc.text("Description", startX + cardPadding, startY + 9);
+    this.pdfDoc.setFontSize(descFontSize);
+    this.pdfDoc.setTextColor(50, 50, 50); 
     this.pdfDoc.setFont("helvetica", "normal");
-    const lines = this.pdfDoc.splitTextToSize(desc, 180);
-    this.pdfDoc.text(lines, this.margin.x, this.position.y);
-    this.position.y += lines.length * 7;
+    this.pdfDoc.text(
+      lines,
+      startX + cardPadding,
+      startY + titleHeight + cardPadding
+    );
+
+    this.position.y = startY + cardHeight + 8;
+  }
+
+  roundedRect(x, y, w, h, r, style) {
+    const pdf = this.pdfDoc;
+    pdf.roundedRect(x, y, w, h, r, r, style);
   }
 
   reset() {
     this.pdfDoc = new jsPDF();
     this.position = { x: 10, y: 20 };
-    // border removed: no addBackground() call
   }
 
   generateJobPDF(job) {
     this.reset();
     this.addHeader("OddJobs Job Details");
-    // Job ID removed
     this.addFieldValue("Title", job.title);
     this.addFieldValue("Category", job.category);
     this.addFieldValue("Salary", `$${job.salary}`);

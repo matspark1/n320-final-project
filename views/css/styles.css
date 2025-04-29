@@ -348,5 +348,312 @@ main {
   }
 }
 
+@media (max-width: 1600px) {
+  nav {
+    width: 95%;
+    padding-left: 3rem;
+    font-size: 22px;
+  }
+
+  nav ul {
+    gap: 30px;
+    justify-content: space-between;
+  }
+
+  .hero {
+    height: 500px;
+    background-size: contain;
+  }
+
+  .title {
+    font-size: 50px;
+    top: 30%;
+    left: 80%;
+    transform: translateX(-50%);
+    width: 50%;
+  }
+
+  .tag {
+    font-size: 22px;
+    top: 50%;
+    width: 50%;
+    left: 80%;
+    transform: translateX(-50%);
+  }
+
+  button {
+    font-size: 18px;
+    top: 60%;
+    left: 60%;
+    transform: translateX(-50%);
+  }
+
+  main {
+    margin: 60px;
+    padding: 40px;
+  }
+
+  .suggest-job form {
+    width: 70%;
+  }
+
+  .suggest-job button {
+    width: 70%;
+    left: 15%;
+  }
+
+  .suglist {
+    margin-top: 70px;
+    height: auto !important;
+  }
+
+  .sug-btns {
+    flex-direction: row;
+    justify-content: flex-start;
+    right: 0;
+  }
+
+  .delete-sug-btn {
+    margin-left: 20px;
+    margin-top: 0;
+  }
+}
 
 
+@media (max-width: 1200px) {
+  nav {
+    width: 90%;
+    padding-left: 2rem;
+    font-size: 20px;
+  }
+
+  nav ul {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    width: 100%;
+    right: 0;
+    background-size: cover;
+    height: 400px;
+  }
+
+  .title {
+    font-size: 40px;
+    left: 50%;
+    top: 35%;
+    background-color: rgb(168, 196, 235);
+    padding: 20px;
+    color: white;
+    border-radius: 20px;
+  }
+
+  .tag {
+    font-size: 18px;
+    left: 50%;
+    top: 48%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  button {
+    font-size: 16px;
+    top: 58%;
+    left: 50%;
+    background-color: rgb(146, 187, 248); 
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  main {
+    margin: 50px;
+    padding: 30px;
+    margin-top: 100px;
+  }
+
+  .suggest-job form {
+    width: 80%;
+  }
+
+  .suggest-job button {
+    width: 80%;
+    left: 10%;
+  }
+
+  .suglist {
+    margin-top: 60px;
+    height: auto !important;
+  }
+
+  .sug-btns {
+    flex-direction: column;
+    right: -100px;
+  }
+
+  .delete-sug-btn {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    width: 90%;
+    font-size: 20px;
+    padding-left: 2rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .hero {
+    height: 300px;
+    width: 90%;
+    right: 0;
+    background-size: cover;
+  }
+
+  .title {
+    font-size: 36px;
+    top: 35%;
+    left: 50%;
+  }
+
+  .tag {
+    font-size: 16px;
+    top: 50%;
+    left: 50%;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 8px 16px;
+    top: 65%;
+    left: 50%;
+  }
+
+  main {
+    margin: 50px;
+    padding: 30px;
+  }
+
+  .bubbles-container {
+    gap: 1rem;
+    padding-bottom: 50px;
+  }
+
+  .bubble1, .bubble2, .bubble3 {
+    width: 80%;
+    padding: 1.5rem;
+  }
+
+  .suggest-job form {
+    width: 80%;
+  }
+
+  .suggest-job button {
+    width: 100%;
+    left: 0;
+    top: 30px;
+  }
+
+  .suggestion-card {
+    width: 90%;
+  }
+
+  .suglist {
+    height: auto;
+    margin-top: 50px;
+  }
+
+  .sugdetails {
+    padding: 20px;
+  }
+}
+
+/* Mobile (480px and smaller) */
+@media (max-width: 480px) {
+  nav {
+    font-size: 18px;
+    padding-left: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero {
+    height: 250px;
+    width: 90%;
+    background-size: cover;
+    right: 0;
+  }
+
+  .title {
+    font-size: 28px;
+    top: 30%;
+    left: 50%;
+  }
+
+  .tag {
+    font-size: 14px;
+    top: 45%;
+    left: 50%;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 6px 12px;
+    top: 60%;
+    left: 50%;
+  }
+
+  main {
+    margin: 30px 20px;
+    padding: 20px;
+  }
+
+  .bubble1, .bubble2, .bubble3 {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .suggest-job form {
+    width: 90%;
+  }
+
+  .suggest-job button {
+    width: 100%;
+    top: 20px;
+    left: 0;
+  }
+
+  .suggestion-card {
+    width: 100%;
+  }
+
+  .suglist {
+    height: auto;
+    margin-top: 30px;
+  }
+
+  .sugdetails {
+    padding: 10px;
+  }
+
+  .sug-btns {
+    flex-direction: column;
+    right: -100px;
+  }
+
+  .delete-sug-btn {
+    margin-left: 0;
+  }
+}
