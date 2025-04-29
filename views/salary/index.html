@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Salary Comparison</title>
-  <link rel="stylesheet" href="../css/jb.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salary Comparison</title>
+    <link rel="stylesheet" href="../css/jb.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="../"><div class="logo"></div></a>
+        </li>
+        <li><a href="../">Home</a></li>
+        <li><a href="../jobs/">Browse Jobs</a></li>
+        <li><a href="../add-job/">Add a Job</a></li>
+        <li><a href="../suggestions/">Suggestions</a></li>
+        <li><a href="../job-quiz/">Job Quiz</a></li>
+        <li>
+          <a style="color: #4f46e5" href="../salary">Salary Comparison</a>
+        </li>
+        <li>
+          <a href="../jobs-pdf-viewer">Job PDFs</a>
+        </li>
+      </ul>
+    </nav>
 
-  <nav>
-    <ul>
-      <li>
-        <a href="../"><div class="logo"></div></a>
-      </li>
-      <li><a href="../">Home</a></li>
-      <li><a href="../jobs/">Browse Jobs</a></li>
-      <li><a href="../job-postings/">Job Postings</a></li>
-      <li><a href="../add-job/">Add a Job</a></li>
-      <li><a href="../suggestions/">Suggestions</a></li>
-      <li><a href="../job-quiz/">Job Quiz</a></li>
-      <li><a style="color: #4F46E5;" href="../salary">Salary Comparison</a></li>
-    </ul>
-  </nav>
+    <div id="jb-salary-container">
+      <h1 id="jb-salary-title">Salary Comparison Tool</h1>
+      <table id="jb-salary-table">
+        <thead>
+          <tr>
+            <th>Job Title</th>
+            <th>Average Salary</th>
+          </tr>
+        </thead>
+        <tbody id="jb-salary-body"></tbody>
+      </table>
+    </div>
 
-  <div id="jb-salary-container">
-    <h1 id="jb-salary-title">Salary Comparison Tool</h1>
-    <table id="jb-salary-table">
-      <thead>
-        <tr>
-          <th>Job Title</th>
-          <th>Average Salary</th>
-        </tr>
-      </thead>
-      <tbody id="jb-salary-body">
-      </tbody>
-    </table>
-  </div>
-
-  <script src="../js/salary.js"></script>
-</body>
+    <script src="../js/salary.js"></script>
+  </body>
 </html>
