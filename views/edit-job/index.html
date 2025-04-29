@@ -5,24 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit Job</title>
-    <link rel="stylesheet" href="../css/ari.css" />
+    <link rel="stylesheet" href="../css/edit.css" />
   </head>
   <body>
     <nav>
       <ul>
         <li>
-          <a href="./"><div class="logo"></div></a>
+          <a href="../"><div class="logo"></div></a>
         </li>
-        <li><a style="color: #4f46e5" href="../">Home</a></li>
-        <li><a href="./jobs/">Browse Jobs</a></li>
-        <li><a href="./add-job/">Add a Job</a></li>
-        <li><a href="./">Timesheet Maker</a></li>
+        <li><a href="../">Home</a></li>
+        <li><a href="../jobs/">Browse Jobs</a></li>
+        <li><a href="../job-postings">Job Postings</a></li>
+        <li><a href="../add-job/">Add a Job</a></li>
+        <li><a href="../suggestions/">Suggestions</a></li>
         <li><a href="../job-quiz">Job Quiz</a></li>
       </ul>
     </nav>
     <main>
       <h1>Edit Job</h1>
-      <form id="editJobForm">
+      <form class="editJobForm" id="editJobForm">
         <input
           id="title"
           name="title"
@@ -57,7 +58,7 @@
           placeholder="Category"
           required
         />
-        <button type="submit">Submit</button>
+        <button class="subForm" type="submit">Submit</button>
       </form>
     </main>
     <script src="../js/edit-job.js"></script>
