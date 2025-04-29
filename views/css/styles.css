@@ -399,7 +399,60 @@ main {
   }
 
 }
+@media (max-width: 1500px) {
+  nav {
+    width: 95%;
+    padding-left: 3rem;
+    font-size: 22px;
+  }
 
+  .hero {
+    height: 500px;
+    background-size: contain;
+  }
+
+  .title {
+    font-size: 50px;
+    top: 30%;
+    left: 80%;
+    transform: translateX(-50%);
+    width: 50%;
+  }
+
+  .tag {
+    font-size: 22px;
+    top: 50%;
+    width: 50%;
+    left: 80%;
+    transform: translateX(-50%);
+  }
+
+  button {
+    font-size: 18px;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  main {
+    margin: 60px;
+    padding: 40px;
+  }
+
+  .suggest-job form {
+    width: 70%;
+  }
+
+  .suggest-job button {
+    width: 70%;
+  }
+
+  .suglist {
+    margin-top: 70px;
+    height: auto !important;
+  }
+
+}
 @media (max-width: 1285px) {
   nav {
     width: 90%;
