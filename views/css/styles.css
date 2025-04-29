@@ -430,7 +430,7 @@ main {
   button {
     font-size: 18px;
     top: 60%;
-    left: 50%;
+    left: 60%;
     transform: translateX(-50%);
   }
 
