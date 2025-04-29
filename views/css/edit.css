@@ -19,7 +19,7 @@
     margin-bottom: 16px;
     font-family: "popM", sans-serif;
   }
-  
+
   
   @font-face {
     font-family: "popM";
@@ -30,42 +30,94 @@
     src: url(../fonts/Poppins-Bold.ttf);
   }
   
+nav {
+  background-color: #a5b4fc;
+  font-size: 24px;
+  font-family: popM;
+  padding-left: 3rem;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 20px;
+  position: relative;
+  top: 50px;
+  z-index: 1;
+}
+
+nav ul {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+nav a:hover {
+  color: #a5b4fc;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 1600px) {
   nav {
-    background-color: #a5b4fc;
-    font-size: 24px;
-    font-family: popM;
+    width: 95%;
     padding-left: 3rem;
-    width: 80%;
-    margin: 0 auto;
-    border-radius: 20px;
-    position: relative;
-    top: 50px;
-    z-index: 1;
+    font-size: 22px;
   }
-  
+}
+
+@media (max-width: 1285px) {
+  nav {
+    width: 90%;
+    padding-left: 2rem;
+    font-size: 20px;
+  }
+
   nav ul {
-    min-height: 80px;
-    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    width: 90%;
+    font-size: 20px;
+    padding-left: 2rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    font-size: 18px;
+    padding-left: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
     align-items: center;
-    gap: 40px;
   }
-  
-  nav ul li {
-    list-style: none;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: white;
-  }
-  
-  nav a:hover {
-    color: #a5b4fc;
-    background-color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    transition: all 0.3s ease-in-out;
-  }
+}
+
   .logo {
     background-image: url(../images/oddJob_Logo.png);
     background-size: contain;
