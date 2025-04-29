@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Odd Job Quiz</title>
-  <link rel="stylesheet" href="../css/jb.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odd Job Quiz</title>
+    <link rel="stylesheet" href="../css/jb.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="./"><div class="logo"></div></a>
+        </li>
+        <li><a href="../">Home</a></li>
+        <li><a href="../jobs/">Browse Jobs</a></li>
+        <li><a href="../job-postings">Job Postings</a></li>
+        <li><a href="../add-job/">Add a Job</a></li>
+        <li><a href="../suggestions/">Suggestions</a></li>
+        <li><a style="color: #4f46e5" href="../job-quiz/">Job Quiz</a></li>
+      </ul>
+    </nav>
 
-  <nav>
-    <ul>
-      <li>
-        <a href="./"><div class="logo"></div></a>
-      </li>
-      <li><a href="./">Home</a></li>
-      <li><a href="../jobs/">Browse Jobs</a></li>
-      <li><a href="../job-postings">Job Postings</a></li>
-      <li><a href="../add-job/">Add a Job</a></li>
-      <li><a href="../suggestions/">Suggestions</a></li>
-      <li><a style="color: #4f46e5" href="../job-quiz/">Job Quiz</a></li>
-    </ul>
-  </nav>
+    <div id="jb-quiz-container">
+      <h1 id="jb-quiz-title">Find Your Odd Job!</h1>
 
-  <div id="jb-quiz-container">
-    <h1 id="jb-quiz-title">Find Your Odd Job!</h1>
-    
-    <div id="jb-quiz">
-      <div id="jb-question">Loading...</div>
-      <div id="jb-answers"></div>
-      <button id="jb-next-btn">Next</button>
+      <div id="jb-quiz">
+        <div id="jb-question">Loading...</div>
+        <div id="jb-answers"></div>
+        <button id="jb-next-btn">Next</button>
+      </div>
+
+      <div id="jb-result" class="jb-hidden">
+        <h2 id="jb-result-title">Your Odd Job Match:</h2>
+        <p id="jb-job-result"></p>
+        <button id="jb-restart-btn">Retake Quiz</button>
+      </div>
     </div>
 
-    <div id="jb-result" class="jb-hidden">
-      <h2 id="jb-result-title">Your Odd Job Match:</h2>
-      <p id="jb-job-result"></p>
-      <button id="jb-restart-btn">Retake Quiz</button>
-    </div>
-  </div>
-
-  <script src="../js/job-quiz.js"></script>
+    <script src="../js/job-quiz.js"></script>
   </body>
 </html>

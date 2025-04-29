@@ -73,7 +73,7 @@
 
 /*  Quiz Section Styling  */
 #jb-quiz-container {
-    font-family: Arial, sans-serif;
+    font-family: popM;
     margin: 100px;
     background: linear-gradient(300deg, #4f46e5, #a5b4fc, #ffffff);
     background-size: 240% 240%;
@@ -106,12 +106,14 @@
   #jb-question {
     margin-bottom: 20px;
     font-size: 20px;
+    font-family: popM;
   }
   
   #jb-answers {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    font-family: popM;
   }
   
   .jb-answer-btn {

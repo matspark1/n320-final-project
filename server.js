@@ -24,6 +24,10 @@ app.get("/delete-job/:id", function (req,res){
   res.sendFile(path.join(__dirname, "views", "delete-job", "index.html"));
 });
 
+app.get("/job-pdf-generator", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "jobPDFGenerator.html"));
+});
+
 app.get(
   "/contact",
   function (req, res, next) {
