@@ -307,7 +307,7 @@ main {
   justify-content: center;
   position: absolute;
   width: 100%;
-  right: -200px;
+  right: -150px;
 }
 
 .sug-btns button {
@@ -398,16 +398,6 @@ main {
     height: auto !important;
   }
 
-  .sug-btns {
-    flex-direction: row;
-    justify-content: flex-start;
-    right: 0;
-  }
-
-  .delete-sug-btn {
-    margin-left: 20px;
-    margin-top: 0;
-  }
 }
 
 @media (max-width: 1285px) {
@@ -480,16 +470,10 @@ main {
     margin-top: 60px;
     height: auto !important;
   }
-
   .sug-btns {
-    flex-direction: column;
     right: -100px;
   }
 
-  .delete-sug-btn {
-    margin-left: 0;
-    margin-top: 10px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -570,7 +554,7 @@ main {
   }
 }
 
-/* Mobile (480px and smaller) */
+
 @media (max-width: 480px) {
   nav {
     font-size: 18px;
@@ -641,12 +625,4 @@ main {
     padding: 10px;
   }
 
-  .sug-btns {
-    flex-direction: column;
-    right: -100px;
-  }
-
-  .delete-sug-btn {
-    margin-left: 0;
-  }
 }
