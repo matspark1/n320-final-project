@@ -1,0 +1,155 @@
+/*  General and nav Styling  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
+  h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: 16px;
+    font-family: 'popM', sans-serif;
+  }
+  
+  @font-face {
+    font-family: 'popM';
+    src: url(../fonts/Poppins-Medium.ttf);
+  }
+  @font-face {
+    font-family: 'popB';
+    src: url(../fonts/Poppins-Bold.ttf);
+  }
+  
+  nav {
+    background-color: #A5B4FC;
+    font-size: 24px;
+    font-family: popM;
+    padding-left: 3rem;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 20px;
+    position: relative;
+    top: 50px;
+    z-index: 1;
+  }
+  
+  nav ul {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  nav ul li {
+    list-style: none;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  nav a:hover {
+    color: #A5B4FC;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  .logo{
+    background-image: url(../images/oddJob_Logo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80px;
+    width: 80px;
+  
+  }
+
+/*  Quiz Section Styling  */
+#jb-quiz-container {
+    font-family: Arial, sans-serif;
+    margin: 100px;
+    background: linear-gradient(300deg, #4f46e5, #a5b4fc, #ffffff);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+    position: relative;
+    height: auto;
+    padding: 50px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+   
+  }
+  
+  #jb-quiz-title {
+    color: #4F46E5;
+    margin-bottom: 20px;
+  }
+  
+  #jb-quiz {
+    background: #f9f9f9;
+    border: 2px solid #4F46E5;
+    border-radius: 10px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  #jb-question {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  
+  #jb-answers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .jb-answer-btn {
+    padding: 10px;
+    background-color: #A5B4FC;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+    .jb-selected {
+    background-color: #4F46E5;
+    color: #ffffff;
+  }
+  
+  
+  .jb-answer-btn:hover {
+    background-color: #4F46E5;
+    color: white;
+  }
+  
+  #jb-next-btn,
+  #jb-restart-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4F46E5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #jb-result {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .jb-hidden {
+    display: none;
+  }
