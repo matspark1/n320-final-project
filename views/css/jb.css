@@ -157,14 +157,6 @@ p {
   background-color: #f9f9f9;
 }
 
-@media (max-width: 1600px) {
-  nav {
-    width: 95%;
-    padding-left: 3rem;
-    font-size: 22px;
-  }
-}
-
 nav {
   background-color: #a5b4fc;
   font-size: 24px;
@@ -201,6 +193,14 @@ nav a:hover {
   padding: 10px 20px;
   border-radius: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 1600px) {
+  nav {
+    width: 95%;
+    padding-left: 3rem;
+    font-size: 22px;
+  }
 }
 
 @media (max-width: 1285px) {
