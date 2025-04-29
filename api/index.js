@@ -89,9 +89,16 @@ function updateSugs(id, sug_title, sug_description) {
 
 function deleteSugs(id) {
   return new Promise((resolve, reject) => {
-    db.run(`delete from suggestions where id = ${id}`, function (err) {
+    db.get(`select * from suggestions where id = ?`, [id], (err, row) => {
       if (err) reject(err);
-      else resolve(true);
+      if (!row) {
+        reject(new Error('Suggestion not found'));
+      } else {
+        db.run(`delete from suggestions where id = ?`, [id], function(err) {
+          if (err) reject(err);
+          else resolve(true);
+        });
+      }
     });
   });
 }
