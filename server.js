@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 
-// require('./api/update')(app);
+
 
 app.use(express.json());
 
@@ -40,7 +40,10 @@ app.get(
   }
 );
 
-
+// const updateRoutes = require("./api/update");
+// app.use(express.json());
+// app.use("/api/update", updateRoutes);
+//messing with stuff, ignore
 
 
 app.get("/*page.html", function (req, res) {

@@ -8,11 +8,18 @@ async function loadJob(){
         const resp = await fetch(`${baseUrl}/api/update/${jobId}`);
         console.log(resp)
         const job = await resp.json();
-        document.querySelector('input[name="title"]').value = job.title;
-        document.querySelector('textarea[name="description"]').value = job.description;
-        document.querySelector('input[name="salary"]').value = job.salary;
-        document.querySelector('input[name="skills"]').value = job.skills;
-        document.querySelector('input[name="category"]').value = job.category;
+
+        document.getElementById('title').value = job.title || '';
+        document.getElementById('description').value = job.description || '';
+        document.getElementById('salary').value = job.salary || '';
+        document.getElementById('skills').value = job.skills || '';
+        document.getElementById('category').value = job.category || '';
+
+        // document.querySelector('input[name="title"]').value = job.title;
+        // document.querySelector('textarea[name="description"]').value = job.description;
+        // document.querySelector('input[name="salary"]').value = job.salary;
+        // document.querySelector('input[name="skills"]').value = job.skills;
+        // document.querySelector('input[name="category"]').value = job.category;
         
     } catch (err) {
         console.error("Error: ", err);

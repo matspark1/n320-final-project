@@ -387,6 +387,5 @@ router.delete("/jobPostings/remove/:postingId", async (req, res) => {
   }
 });
 
-router.use("/update", require("./update"));
 
 module.exports = router;
