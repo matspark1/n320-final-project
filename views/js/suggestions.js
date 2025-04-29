@@ -13,7 +13,6 @@ async function getSugs() {
           <h4>${sug.title}</h4>
           <h6>${sug.description}</h6>
           <div class="sug-btns">
-            <button class="add-sug-btn" title="Add Suggestion">Add a Suggestion ❗</button>
             <button class="delete-sug-btn" title="Remove Suggestion" data-id="${sug.id}">Delete Suggestion ❌</button>
             <button class="edit-sug-btn" title="Edit Suggestion" data-id="${sug.id}">Edit Suggestion ✏️</button>
           </div>
