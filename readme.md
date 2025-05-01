@@ -21,28 +21,35 @@
 
 ### Core Pages
 
-1. **Home Page**  
+1. **Home Page**
+
    - Overview of the site, featured jobs, and navigation links.
 
-2. **Job Listings**  
-   - Browse all odd jobs. 
+2. **Job Listings**
 
-3. **Job Details Page**  
+   - Browse all odd jobs.
+
+3. **Job Details Page**
+
    - Full details for each job.
 
-4. **Add a Job**  
+4. **Add a Job**
+
    - Form to submit a new odd job.
 
-5. **Edit/Delete Job**  
+5. **Edit/Delete Job**
+
    - Edit or remove existing jobs.
 
-6. **Job Postings**  
+6. **Job Postings**
+
    - Users can post their own job listings.
 
-7. **Salary Comparison Tool**  
+7. **Salary Comparison Tool**
+
    - Compare average salaries for odd jobs.
 
-8. **PDF Generator**  
+8. **PDF Generator**
    - Export a printable PDF with selected job details, salary info, and skills.
 
 ---
@@ -53,52 +60,57 @@
 | ---------- | ------------- | ------------------- | --------------------------------------------------- |
 | Primary    | #4F46E5       | Indigo color        | Gives a subtle pop while still feeling professional |
 | Accent     | #A5B4FC       | Lavender blue color | Light highlights or hover states                    |
-| Background | #FFFFFF       | Solid white         | For a clean  background                             |
+| Background | #FFFFFF       | Solid white         | For a clean background                              |
 | Text       | #111827       | Dark Grey           | Dark text for eligibility and contrast              |
 
 ### Database Tables
 
 #### `jobs`
-| Field        | Description                          |
-|--------------|--------------------------------------|
-| id           | Unique job ID                        |
-| title        | Name of the job                      |
-| description  | Full job description                 |
-| salary       | Average salary                       |
-| skills       | List of required skills              |
-| category     | Job category                         |
+
+| Field       | Description             |
+| ----------- | ----------------------- |
+| id          | Unique job ID           |
+| title       | Name of the job         |
+| description | Full job description    |
+| salary      | Average salary          |
+| skills      | List of required skills |
+| category    | Job category            |
 
 #### `job_postings`
-| Field        | Description                          |
-|--------------|--------------------------------------|
-| id           | Unique posting ID                    |
-| job_id       | Links to job                         |
-| location     | Location of job                      |
-| description  | Custom posting content               |
-| date_posted  | When it was posted                   |
 
+| Field       | Description            |
+| ----------- | ---------------------- |
+| id          | Unique posting ID      |
+| job_id      | Links to job           |
+| location    | Location of job        |
+| description | Custom posting content |
+| date_posted | When it was posted     |
 
 ---
 
 ### Team Members & Responsibilities
 
 **Matt – President**
-- Create and manage GitHub repository  
-- Delegate roles  
-- Submit assignments  
-- Create and maintain live link  
-- **Pages:** Job Listing, Job Details Page  
+
+- Create and manage GitHub repository
+- Delegate roles
+- Submit assignments
+- Create and maintain live link
+- **Pages:** Job Listing, Job Details Page
 
 **Ari – Scrum Master**
-- Write "Members & Responsibilities" section  
-- Track and record team roles and completed tasks  
-- **Pages:** Add a Job Page, Edit/Delete Job Page  
+
+- Write "Members & Responsibilities" section
+- Track and record team roles and completed tasks
+- **Pages:** Add a Job Page, Edit/Delete Job Page
 
 **Jonathan – Designer**
-- Select and apply color palette  
-- **Pages:** Job Postings, Salary Comparison Tool  
+
+- Select and apply color palette
+- **Pages:** Job Quiz, Salary Comparison Tool
 
 **Megan – Analyst**
-- Write "Key Takeaways" section  
-- Design project logo  
-- **Pages:** PDF Generator Page, Home Page  
+
+- Write "Key Takeaways" section
+- Design project logo
+- **Pages:** PDF Generator Page, Home Page
