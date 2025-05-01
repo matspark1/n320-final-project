@@ -22,7 +22,8 @@ document
         });
         if (res.ok) {
           this.reset();
-          alert("Job added successfully!")
+          alert("Job added successfully!");
+          window.location.href = "../../jobs";
         } else {
           console.warn("Failed to add job");
         }

@@ -2,16 +2,16 @@ const express = require("express");
 const router = express.Router();
 const db = require("../database");
 
-// router.get("/", (req, res) => {
-//   db.all(`SELECT * FROM jobs`, [], (err, rows) => {
-//     if (err) {
-//       console.error("Database fetch error:", err);
-//       res.status(500).json({ error: "Failed to fetch jobs" });
-//     } else {
-//       res.status(200).json(rows);
-//     }
-//   });
-// });
+router.get("/", (req, res) => {
+  db.all(`SELECT * FROM jobs`, [], (err, rows) => {
+    if (err) {
+      console.error("Database fetch error:", err);
+      res.status(500).json({ error: "Failed to fetch jobs" });
+    } else {
+      res.status(200).json(rows);
+    }
+  });
+});
 
 router.get("/edit/:id", (req, res) => {
   const { id } = req.params;
@@ -53,5 +53,24 @@ router.put("/edit/:id", (req, res) => {
 });
 
 
+router.delete('/delete/:id', (req, res) => {
+  const { id } = req.params;
+
+  db.run(
+    `DELETE FROM jobs WHERE id = ?`,
+    [id],
+    function (err) {
+      if (err) {
+        console.error("Error deleting job:", err);
+        return res.status(500).json({ error: "Failed to delete job" });
+      }
+      if (this.changes === 0) {
+        return res.status(404).json({ error: "Job not found" });
+      }
+
+      res.status(200).json({ message: "Job deleted successfully" });
+    }
+  );
+});
 
 module.exports = router;

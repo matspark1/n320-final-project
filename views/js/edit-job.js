@@ -52,7 +52,7 @@ document.getElementById("editJobForm").addEventListener("submit", async (e) => {
 
     if (resp.ok) {
       alert("Job updated successfully!");
-      window.location.href = "../../jobs/";
+      window.location.href = "../../jobs";
     } else {
       const errorData = await resp.json();
       alert(`Error updating job: ${errorData.error || "Unknown error"}`);
