@@ -1,47 +1,34 @@
 const baseUrl = window.location.origin + "/api";
 
-document.getElementById("submitJob").addEventListener("submit", async (event) => {
-  event.preventDefault(); 
+document
+  .querySelector("#submitJob")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  const title = document.getElementById("title").value;
-  const description = document.getElementById("description").value;
-  const salary = document.getElementById("salary").value;
-  const skills = document.getElementById("skills").value;
-  const category = document.getElementById("category").value;
+    const title = this.title.value.trim();
+    const description = this.description.value.trim();
+    const salary = this.salary.value.trim();
+    const skills = this.skills.value.trim();
+    const category = this.category.value.trim();
 
-  console.log("Job data being sent:", {
-    title,
-    description,
-    salary,
-    skills,
-    category
+    if (title && description && salary && skills && category) {
+      try {
+        const res = await fetch(`${baseUrl}/new/add`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ title, description, salary, skills, category }),
+        });
+        if (res.ok) {
+          this.reset();
+          alert("Job added successfully!")
+        } else {
+          console.warn("Failed to add job");
+        }
+      } catch (err) {
+        console.error("Error adding job", err);
+      }
+    }
   });
 
-  try {
- 
-    const resp = await fetch(`${baseUrl}/api/new`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title,
-        description,
-        salary,
-        skills,
-        category,
-      }),
-    });
-
-    if (resp.ok) {
-      alert("Job added successfully.");
-      window.location.href = "/jobs";
-    } else {
-      alert("Failed to add job.");
-      const response = await resp.json();
-      console.error("Error response:", response);
-    }
-  } catch (err) {
-    console.error("Error adding job", err);
-  }
-});

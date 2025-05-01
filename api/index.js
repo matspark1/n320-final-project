@@ -2,6 +2,8 @@ const router = require("express").Router();
 
 const db = require("../database");
 router.use("/suggestions", require("./suggestions"));
+router.use("/new", require("./new"));
+router.use("/update", require("./update"));
 
 // create the tables
 
@@ -35,7 +37,6 @@ db.run(
     if (err) console.log(err);
   }
 );
-
 
 db.run(
   `
@@ -92,9 +93,9 @@ function deleteSugs(id) {
     db.get(`select * from suggestions where id = ?`, [id], (err, row) => {
       if (err) reject(err);
       if (!row) {
-        reject(new Error('Suggestion not found'));
+        reject(new Error("Suggestion not found"));
       } else {
-        db.run(`delete from suggestions where id = ?`, [id], function(err) {
+        db.run(`delete from suggestions where id = ?`, [id], function (err) {
           if (err) reject(err);
           else resolve(true);
         });
@@ -102,7 +103,6 @@ function deleteSugs(id) {
     });
   });
 }
-
 
 // jobs table stuff
 
@@ -225,21 +225,15 @@ router.post("/suggestions/new", async (req, res) => {
   }
 });
 
-
 router.put("/suggestions/update/:sugId", async (req, res) => {
   try {
     const { sug_title, sug_description } = req.body;
-    await updateSugs(
-      req.params.sugId,
-      sug_title,
-      sug_description
-    );
+    await updateSugs(req.params.sugId, sug_title, sug_description);
     res.status(200).json({ updated: true });
   } catch (e) {
     res.status(400).json({ error: e });
   }
 });
-
 
 router.delete("/suggestions/remove/:sugId", async (req, res) => {
   try {
@@ -250,10 +244,6 @@ router.delete("/suggestions/remove/:sugId", async (req, res) => {
     res.status(400).json({ error: e });
   }
 });
-
-
-
-
 
 // routing for jobs
 
@@ -387,5 +377,118 @@ router.delete("/jobPostings/remove/:postingId", async (req, res) => {
   }
 });
 
+function getJobs() {
+  return new Promise((resolve, reject) => {
+    db.all(`select * from jobs`, [], (err, rows) => {
+      if (err) reject(err);
+      else resolve(rows);
+    });
+  });
+}
+
+function addJobs(addTitle, addDescription, addSalary, addSkill, addCategory) {
+  return new Promise((resolve, reject) => {
+    db.run(
+      `insert into jobs (addTitle, addDescription, addSalary, addSkill, addCategory)
+       values ("${addTitle}", "${addDescription}", "${addSalary}", "${addSkill}", "${addCategory}")`,
+      function (err) {
+        if (err) reject(err);
+        else resolve({ id: this.lastID });
+      }
+    );
+  });
+}
+
+function editJob(
+  id,
+  editTitle,
+  editDescription,
+  editSalary,
+  editSkill,
+  editCategory
+) {
+  return new Promise((resolve, reject) => {
+    db.run(
+      `UPDATE jobs
+       SET title = ?,
+           description = ?,
+           salary = ?,
+           skills = ?,
+           category = ?
+       WHERE id = ?`,
+      [editTitle, editDescription, editSalary, editSkill, editCategory, id],
+      function (err) {
+        if (err) reject(err);
+        else resolve(true);
+      }
+    );
+  });
+}
+
+function deleteJob(id) {
+  return new Promise((resolve, reject) => {
+    db.get(`select * from jobs where id = ?`, [id], (err, row) => {
+      if (err) reject(err);
+      if (!row) {
+        reject(new Error("Job not found"));
+      } else {
+        db.run(`delete from jobs where id = ?`, [id], function (err) {
+          if (err) reject(err);
+          else resolve(true);
+        });
+      }
+    });
+  });
+}
+
+router.get("/jobs", async (req, res) => {
+  try {
+    const job = await getJobs();
+    res.status(200).json(job);
+  } catch (e) {
+    res.status(400).json({ error: e });
+  }
+});
+router.post("/new/add", async (req, res) => {
+  try {
+    const { addTitle, addDescription, addSalary, addSkill, addCategory } =
+      req.body;
+    await addJobs(addTitle, addDescription, addSalary, addSkill, addCategory);
+    const jobs = await addJobs();
+    res.status(200).json({ totalJobs: jobs.length });
+  } catch (e) {
+    res.status(400).json({ error: e });
+  }
+});
+
+router.put("/update/edit/:id", async (req, res) => {
+  try {
+    const { editTitle, editDescription, editSalary, editSkill, editCategory } =
+      req.body;
+    await editJob(
+      req.params.id,
+      editTitle,
+      editDescription,
+      editSalary,
+      editSkill,
+      editCategory
+    );
+    res.status(200).json({ updated: true });
+  } catch (e) {
+    res.status(400).json({ error: e });
+    console.error("Error updating job:", e);
+    res.status(500).json({ error: e.message || e });
+  }
+});
+
+router.delete("/update/delete/:jobId", async (req, res) => {
+  try {
+    await deleteJob(req.params.jobId);
+    const job = await getJobs();
+    res.status(200).json({ totalJobs: job.length });
+  } catch (e) {
+    res.status(400).json({ error: e });
+  }
+});
 
 module.exports = router;
