@@ -21,6 +21,7 @@ class GeneratePDF {
     this.pdfDoc.text(text, 105, this.position.y, { align: "center" });
     this.position.y += 20;
     this.pdfDoc.setTextColor(107, 130, 201);
+    
   }
 
   addFieldValue(label, value) {
@@ -53,11 +54,11 @@ class GeneratePDF {
 
 
     this.pdfDoc.setFillColor(107, 130, 201);
-    this.pdfDoc.rect(startX, startY, cardWidth, titleHeight, 'F');
+    this.roundedRect(startX, startY, cardWidth, titleHeight, 5, 'F');
     this.pdfDoc.setFontSize(12);
     this.pdfDoc.setTextColor(255, 255, 255); 
     this.pdfDoc.setFont("helvetica", "bold");
-    this.pdfDoc.text("Description", startX + cardPadding, startY + 9);
+    this.pdfDoc.text("Description", startX + cardPadding, startY + 8);
     this.pdfDoc.setFontSize(descFontSize);
     this.pdfDoc.setTextColor(50, 50, 50); 
     this.pdfDoc.setFont("helvetica", "normal");

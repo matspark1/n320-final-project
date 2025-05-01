@@ -113,6 +113,17 @@ nav a:hover {
   transition: all 0.3s ease-in-out;
 }
 
+.delBtn{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: popM;
+}
+
 @media (max-width: 1600px) {
   nav {
     width: 95%;
